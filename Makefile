@@ -42,7 +42,12 @@ CFLAGS += -DVERSION=\"v0.9.0.0-$(GIT_VERSION)\"
 MAINLOGIC_SOURCE := \
 	main.c \
 	device.c \
-	driver.c \
+	drivers/asetek.c \
+	drivers/asetekpro.c \
+	drivers/commanderpro.c \
+	drivers/coolit.c \
+	drivers/dongle.c \
+	drivers/rmi.c \
 	print.c \
 	logic/options.c \
 	logic/options_fan.c \
@@ -84,7 +89,8 @@ PROTOCOL_SOURCE := \
 	protocol/coolit/fan.c \
 	protocol/coolit/led.c \
 	protocol/coolit/pump.c \
-	protocol/coolit/temperature.c
+	protocol/coolit/temperature.c \
+	protocol/unsupported.c
 
 HEADER := $(shell find ./include -name '*.h')
 
